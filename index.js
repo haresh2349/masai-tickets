@@ -3,10 +3,13 @@ const { connectDB } = require("./configs/db");
 const { LoginRouter } = require("./route/login.route");
 const { SignupRouter } = require("./route/signup.route");
 const { TicketRouter } = require("./route/ticket.route");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 const PORT = process.env.PORT || 8080;
 app.use("/", (req, res) => {
   res.send("WELCOME");
