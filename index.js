@@ -8,7 +8,9 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 const PORT = process.env.PORT || 8080;
-
+app.use("/", (req, res) => {
+  res.send("WELCOME");
+});
 app.use("/signup", SignupRouter);
 app.use("/login", LoginRouter);
 app.use("/create", TicketRouter);
