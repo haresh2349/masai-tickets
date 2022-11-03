@@ -3,7 +3,7 @@ const { UserModel } = require("../model/user.model");
 const bcrypt = require("bcryptjs");
 const LoginRouter = Router();
 const jwt = require("jsonwebtoken");
-LoginRouter.post("/", async (req, res) => {
+LoginRouter.post("/auth", async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await UserModel.findOne({ email });
