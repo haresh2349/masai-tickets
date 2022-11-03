@@ -10,14 +10,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-const PORT = 8080;
-app.use("/", (req, res) => {
+const PORT = 4000;
+app.get("/", (req, res) => {
   res.json("WELCOME");
 });
 app.use("/auth", SignupRouter);
-app.use("/auth", LoginRouter);
+app.use("/auth1", LoginRouter);
 app.use("/tickets", TicketRouter);
-app.use("/tickets", TicketRouter);
+app.use("/tickets1", TicketRouter);
 app.listen(PORT, async () => {
   try {
     await connectDB;
