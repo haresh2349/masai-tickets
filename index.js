@@ -14,6 +14,7 @@ app.use("/", (req, res) => {
 app.use("/signup", SignupRouter);
 app.use("/login", LoginRouter);
 app.use("/create", TicketRouter);
+app.use("/getAll", TicketRouter);
 app.listen(PORT, async () => {
   try {
     await connectDB;
