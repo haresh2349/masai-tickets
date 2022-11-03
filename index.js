@@ -14,10 +14,10 @@ const PORT = process.env.PORT || 8080;
 app.use("/", (req, res) => {
   res.json("WELCOME");
 });
-app.use("/signup", SignupRouter);
-app.use("/login", LoginRouter);
-app.use("/create", TicketRouter);
-app.use("/getAll", TicketRouter);
+app.use("/auth", SignupRouter);
+app.use("/auth", LoginRouter);
+app.use("/tickets", TicketRouter);
+app.use("/tickets", TicketRouter);
 app.listen(PORT, async () => {
   try {
     await connectDB;

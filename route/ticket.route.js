@@ -4,7 +4,7 @@ const { TicketModel } = require("../model/ticket.model");
 
 const TicketRouter = Router();
 
-TicketRouter.post("/", requireLogin, async (req, res) => {
+TicketRouter.post("/create", requireLogin, async (req, res) => {
   try {
     const { userId } = req.body;
     let ticket = new TicketModel({ ...req.body, userId });
@@ -20,7 +20,7 @@ TicketRouter.post("/", requireLogin, async (req, res) => {
   }
 });
 
-TicketRouter.get("/", requireLogin, async (req, res) => {
+TicketRouter.get("/getAll", requireLogin, async (req, res) => {
   try {
     const { userId } = req.body;
     const tickets = await TicketModel.find({ userId });

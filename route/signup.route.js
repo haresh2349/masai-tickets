@@ -4,7 +4,7 @@ const { UserModel } = require("../model/user.model");
 
 const SignupRouter = Router();
 
-SignupRouter.post("/auth", (req, res) => {
+SignupRouter.post("/signup", (req, res) => {
   try {
     const { name, email, password } = req.body;
     bcrypt.hash(password, 6, async function (err, hash) {
