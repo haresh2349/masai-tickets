@@ -15,7 +15,7 @@ LoginRouter.post("/login", async (req, res) => {
           .status(404)
           .send({ type: "error", message: "Please Login again" });
       }
-      const token = jwt.sign({ userId: user._id }, process.env.SECRETKEY);
+      const token = jwt.sign({ userId: user._id }, "haresh007");
       return res
         .status(201)
         .send({ type: "success", token: token, user: user });

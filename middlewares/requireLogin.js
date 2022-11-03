@@ -7,7 +7,7 @@ const requireLogin = (req, res, next) => {
       .send({ type: "error", message: "Please Login again" });
   }
   const token = req.headers.authorization.split(" ")[1];
-  jwt.verify(token, process.env.SECRETKEY, function (err, decoded) {
+  jwt.verify(token, "haresh007", function (err, decoded) {
     if (err) {
       res.status(401).send({ type: "error", message: "Please Login again" });
     }
